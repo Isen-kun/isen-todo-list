@@ -5,13 +5,22 @@ import {
   ListItemText,
   IconButton,
   makeStyles,
+  Typography,
 } from "@material-ui/core";
+import { red, teal } from "@material-ui/core/colors";
 import { Delete, DoneOutlined } from "@material-ui/icons";
 import { useEffect, useState } from "react";
 
 const useStyles = makeStyles({
   completed: {
     textDecoration: "line-through",
+    backgroundColor: teal[300],
+  },
+  incompleted: {
+    backgroundColor: red[300],
+  },
+  text: {
+    fontSize: "10rem",
   },
 });
 
@@ -21,7 +30,6 @@ const NotesList = ({ Notes, setNotes, Group }) => {
   const [FilteredNotes, setFilteredNotes] = useState([]);
 
   useEffect(() => {
-    console.log(Group);
     if (Group === "All") {
       setFilteredNotes(Notes);
     } else {
@@ -53,11 +61,20 @@ const NotesList = ({ Notes, setNotes, Group }) => {
     <Box>
       <List>
         {FilteredNotes.map((note) => (
-          <div className="list-item" key={note.id}>
+          <div key={note.id}>
             <ListItem divider>
               <ListItemText
-                primary={note.text}
-                className={`${note.group === "Comp" ? classes.completed : ""}`}
+                disableTypography
+                primary={
+                  <Typography variant="body1" style={{ fontWeight: 500 }}>
+                    {note.text}
+                  </Typography>
+                }
+                className={`${
+                  note.group === "Comp"
+                    ? classes.completed
+                    : classes.incompleted
+                }`}
               />
               <IconButton
                 aria-label="complete"

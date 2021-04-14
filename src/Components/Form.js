@@ -35,11 +35,12 @@ const Form = ({ Notes, setNotes, setGroup, Group }) => {
         label="Note"
         variant="filled"
         required
+        style={{ width: "50%" }}
       />
-      <IconButton aria-label="submit" type="submit">
+      <IconButton aria-label="submit" type="submit" style={{ padding: 20 }}>
         <TurnedIn />
       </IconButton>
-      <FormControl variant="filled">
+      <FormControl variant="filled" style={{ width: "15%" }}>
         <InputLabel id="filter">Filter</InputLabel>
         <Select value={Group} onChange={(e) => setGroup(e.target.value)}>
           <MenuItem value={"All"}>All</MenuItem>

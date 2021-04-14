@@ -32,7 +32,7 @@ const Form = ({ Notes, setNotes, setGroup, Group }) => {
     <form autoComplete="off" onSubmit={handleSubmit}>
       <TextField
         onChange={(e) => setInput(e.target.value)}
-        label="Note"
+        label="Enter Note"
         variant="filled"
         required
         style={{ width: "50%" }}
@@ -45,7 +45,7 @@ const Form = ({ Notes, setNotes, setGroup, Group }) => {
         <Select value={Group} onChange={(e) => setGroup(e.target.value)}>
           <MenuItem value={"All"}>All</MenuItem>
           <MenuItem value={"Comp"}>Completed</MenuItem>
-          <MenuItem value={"InComp"}>In-Completed</MenuItem>
+          <MenuItem value={"InComp"}>Incompleted</MenuItem>
         </Select>
       </FormControl>
     </form>

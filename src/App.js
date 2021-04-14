@@ -1,5 +1,4 @@
 import { makeStyles } from "@material-ui/core";
-import "./App.css";
 import Home from "./Components/Home";
 
 const useStyles = makeStyles({

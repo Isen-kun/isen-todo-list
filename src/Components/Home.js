@@ -2,6 +2,7 @@ import { Container, makeStyles, Typography } from "@material-ui/core";
 import { useState } from "react";
 import Form from "./Form";
 import NotesList from "./NotesList";
+import Footer from "./Footer";
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -29,6 +30,7 @@ const Home = () => {
         Group={Group}
       />
       <NotesList Notes={Notes} setNotes={setNotes} Group={Group} />
+      <Footer />
     </Container>
   );
 };

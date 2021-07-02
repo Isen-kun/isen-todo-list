@@ -44,7 +44,7 @@ const NotesList = ({ Notes, setNotes, Group }) => {
         if (note.id === id) {
           return {
             ...note,
-            group: "Comp",
+            group: note.group === "InComp" ? "Comp" : "InComp",
           };
         }
         return note;

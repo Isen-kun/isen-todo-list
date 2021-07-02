@@ -37,9 +37,10 @@ export default function StickyFooter() {
     <div className={classes.root}>
       <CssBaseline />
       <footer className={classes.footer}>
-        <Container maxWidth="sm">
+        <Container maxWidth="md">
           <Typography variant="body1">
-            This Application was created using React JS and Material UI.
+            This Application was created using React JS and Material UI, storing
+            data in browser's local storage.
           </Typography>
           <Copyright />
         </Container>

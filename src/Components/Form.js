@@ -1,4 +1,4 @@
-import { TurnedIn } from "@material-ui/icons";
+import { TurnedInTwoTone } from "@material-ui/icons";
 import { useState } from "react";
 import {
   FormControl,
@@ -8,18 +8,17 @@ import {
   MenuItem,
   Select,
 } from "@material-ui/core";
+import { v4 as uuid } from "uuid";
 
 const Form = ({ Notes, setNotes, setGroup, Group }) => {
   const [Input, setInput] = useState("");
-  const [Id, setID] = useState(0);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setID(Id + 1);
     setNotes([
       ...Notes,
       {
-        id: Id,
+        id: uuid(),
         text: Input,
         group: "InComp",
       },
@@ -37,8 +36,8 @@ const Form = ({ Notes, setNotes, setGroup, Group }) => {
         required
         style={{ width: "50%" }}
       />
-      <IconButton aria-label="submit" type="submit" style={{ padding: 20 }}>
-        <TurnedIn />
+      <IconButton aria-label="submit" type="submit" style={{ padding: 15 }}>
+        <TurnedInTwoTone fontSize="large" />
       </IconButton>
       <FormControl variant="filled" style={{ width: "15%" }}>
         <InputLabel id="filter">Filter</InputLabel>

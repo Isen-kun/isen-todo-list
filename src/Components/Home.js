@@ -27,7 +27,11 @@ const Home = () => {
   useEffect(() => {
     const getLocal = () => {
       const localData = localStorage.getItem("notes");
-      setLocalNotes(JSON.parse(localData));
+      if (localData) {
+        setLocalNotes(JSON.parse(localData));
+      } else {
+        setLocalNotes([]);
+      }
     };
     getLocal();
   }, [change]);
